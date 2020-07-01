@@ -20,11 +20,12 @@ const dsConfig = {
   client: 'mysql',
   connection: {
     host: 'localhost',
-    user: 'kpex.example',
+    user: 'kpexreltest',
     password: 'kpex',
-    database: 'kpex_employees'
+    database: 'kpex_rel_test'
   }
 }
+
 kpex.configure(dsConfig)
 
 /**
@@ -37,7 +38,7 @@ const Project = require('./model/project.js')
  * Wait until kpex is ready (model schema vas validated againts datastore)
  * and play with db entries.
  */
-kpex.ready()
+kpex.whenReady()
 .then(async () => {
   // Create new employee
   const john = await Employee.create({

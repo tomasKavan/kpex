@@ -1,4 +1,4 @@
-import kpex from 'kpex'
+const kpex = require('../../../main.js')
 
 module.export = kpex({
   name: 'Project',

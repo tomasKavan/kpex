@@ -27,10 +27,10 @@ CREATE TABLE `employee` (
   `name` VARCHAR(255) NOT NULL,
   `surname` VARCHAR(255) NOT NULL,
   `position` VARCHAR(255) NOT NULL,
-  `line_manager` INT,
+  `line_manager` INT NULL DEFAULT NULL,
 
   CONSTRAINT `employee_pk_id` PRIMARY KEY (`id`),
-  CONSTRAINT `employee_fk_linemanager` FOREIGN KEY (`id`)
+  CONSTRAINT `employee_fk_linemanager` FOREIGN KEY (`line_manager`)
     REFERENCES `employee` (`id`)
     ON DELETE SET NULL
     ON UPDATE CASCADE
@@ -40,7 +40,7 @@ CREATE TABLE `employee` (
 CREATE TABLE `project` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `description` TEXT NOT NULL DEFAULT '',
+  `description` TEXT NOT NULL,
   `running` BOOLEAN NOT NULL DEFAULT TRUE,
   `manager` INT NOT NULL,
 
@@ -64,6 +64,6 @@ CREATE TABLE `project_employee` (
     ON UPDATE CASCADE,
   CONSTRAINT `projectemployee_fk_employee` FOREIGN KEY (`employee`)
     REFERENCES `employee` (`id`)
-    ON DELETE CASCADE,
+    ON DELETE CASCADE
     ON UPDATE CASCADE
-) ENGINE = 'InnoDB'
+) ENGINE = 'InnoDB';

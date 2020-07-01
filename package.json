@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/tomasKavan/kpex/issues"
   },
-  "homepage": "https://github.com/tomasKavan/kpex#readme"
+  "homepage": "https://github.com/tomasKavan/kpex#readme",
+  "dependencies": {
+    "knex": "^0.20.13",
+    "mysql": "^2.18.1"
+  }
 }
