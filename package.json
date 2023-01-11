@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/tomasKavan/kpex#readme",
   "dependencies": {
-    "knex": "^0.20.13",
+    "knex": "^2.4.0",
     "mysql": "^2.18.1"
   }
 }
